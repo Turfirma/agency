@@ -1,6 +1,6 @@
 package main.springmvc.service;
 
-import main.springmvc.dao.CountryDAO;
+import main.springmvc.dao.CountryDAOImpl;
 import main.springmvc.model.Country;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ import java.util.List;
 public class CountryServiceImpl implements CountryService {
 
     @Autowired
-    private CountryDAO countryDAO;
+    private CountryDAOImpl countryDAO;
 
     @Transactional
     public void saveOrUpdate(Country country) {
@@ -30,12 +30,12 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Transactional
-    public void deleteCountry(Integer countryId) {
-        countryDAO.deleteCountry(countryId);
+    public void deleteCountry(Integer idCountry) {
+        countryDAO.delete(findById(idCountry));
     }
 
     @Transactional
     public Country findById(Integer countryId) {
-        return countryDAO.findById(countryId);
+        return (Country) countryDAO.findById(countryId);
     }
 }

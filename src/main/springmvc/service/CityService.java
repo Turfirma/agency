@@ -13,4 +13,5 @@ public interface CityService {
     void addCity(City city);
     List<City> findAll();
     void deleteCity(Integer idCity);
+    City findById(Integer idCity);
 }

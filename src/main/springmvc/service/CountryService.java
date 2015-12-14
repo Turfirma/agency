@@ -13,5 +13,5 @@ public interface CountryService {
     void saveOrUpdate(Country country);
     List<Country> findAll();
     void deleteCountry(Integer idCountry);
-    Country findById(Integer countryId);
+    Country findById(Integer idCountry);
 }
