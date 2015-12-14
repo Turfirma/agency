@@ -1,13 +1,12 @@
 package main.springmvc.model;
 
 /**
- * Project name: agency
- * Created by bo4ek
- * Date: 09.12.2015
+ * City entity. Contain information about city.
  */
 
 import lombok.*;
 import javax.persistence.*;
+import java.util.Collection;
 
 @Getter
 @Setter
@@ -27,4 +26,7 @@ public class City {
     @ManyToOne
     @JoinColumn(name = "id_country")
     private Country country;
+
+    @OneToMany(mappedBy = "city", fetch = FetchType.EAGER)
+    private Collection<Hotel> hotels;
 }

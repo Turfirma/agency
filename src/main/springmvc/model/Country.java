@@ -3,14 +3,14 @@ package main.springmvc.model;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Project name: agency
- * Created by bo4ek
- * Date: 09.12.2015
+ * Country entity. Contain information about Country.
  */
 @Setter
 @Getter
@@ -27,5 +27,6 @@ public class Country {
     private String countryName;
 
     @OneToMany(mappedBy = "country", fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private Collection<City> city;
 }

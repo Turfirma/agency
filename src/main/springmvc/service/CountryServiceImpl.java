@@ -36,6 +36,6 @@ public class CountryServiceImpl implements CountryService {
 
     @Transactional
     public Country findById(Integer countryId) {
-        return (Country) countryDAO.findById(countryId);
+        return  countryDAO.findById(countryId);
     }
 }
