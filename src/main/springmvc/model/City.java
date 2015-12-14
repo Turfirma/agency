@@ -5,6 +5,9 @@ package main.springmvc.model;
  */
 
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -24,7 +27,7 @@ public class City {
     private String cityName;
 
     @ManyToOne
-    @JoinColumn(name = "id_country")
+    @JoinColumn(name = "id_country", nullable = false)
     private Country country;
 
     @OneToMany(mappedBy = "city", fetch = FetchType.EAGER)

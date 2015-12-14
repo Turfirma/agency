@@ -11,7 +11,6 @@ import javax.persistence.*;
  */
 @Getter
 @Setter
-
 @EqualsAndHashCode(exclude="hotelId")
 @Entity
 @Table(name = "hotels")
@@ -19,12 +18,12 @@ public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_hotel", unique = true)
-    private Integer countryId;
+    private Integer hotelId;
 
-    @Column(name = "hotel_name",unique = true, nullable = false)
+    @Column(name = "hotel_name", nullable = false)
     private String hotelName;
 
     @ManyToOne
-    @JoinColumn(name = "id_city")
+    @JoinColumn(name = "id_city", nullable = false)
     private City city;
 }

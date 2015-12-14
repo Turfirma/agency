@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * General DAO implementation.
  */
-public class GenericDAOImpl <T> implements GenericDAO <T> {
+public class GenericDAOImpl<T> implements GenericDAO <T> {
 
     private Class<T> type;
 
@@ -29,8 +29,7 @@ public class GenericDAOImpl <T> implements GenericDAO <T> {
     @Override
     @SuppressWarnings("unchecked")
     public List findAll() {
-         List<T> list = sessionFactory.getCurrentSession().createCriteria(type).list();
-        return list;
+        return sessionFactory.getCurrentSession().createCriteria(type).list();
     }
 
     @Override
@@ -39,7 +38,8 @@ public class GenericDAOImpl <T> implements GenericDAO <T> {
     }
 
     @Override
-    public T findById(Integer Id) {
-        return (T) sessionFactory.getCurrentSession().get(type, Id) ;
+    @SuppressWarnings("unchecked")
+    public T findById(Integer id) {
+        return (T) sessionFactory.getCurrentSession().get(type, id) ;
     }
 }
