@@ -1,10 +1,11 @@
 package main.springmvc.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Hotel entity. Contain information about Hotel.
@@ -26,4 +27,8 @@ public class Hotel {
     @ManyToOne
     @JoinColumn(name = "id_city", nullable = false)
     private City city;
+
+/*    @OneToMany(mappedBy = "hotels", fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
+    private Collection<Room> rooms;*/
 }

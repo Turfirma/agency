@@ -13,7 +13,8 @@
     <import resource="controllers.xml"/>
 
     <mvc:resources location="/main/resources/" mapping="/resources/**"/>
-    <mvc:resources location="/main/webapp/WEB-INF/resources/" mapping="/resources/**"/>
+
+    <mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />

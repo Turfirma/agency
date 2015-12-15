@@ -20,7 +20,7 @@ public class CityServiceImpl implements CityService {
     private CityDAOImpl cityDAO;
 
     @Transactional
-    public void addCity(City city) {
+    public void saveOrUpdate(City city) {
         cityDAO.saveOrUpdate(city);
     }
 
@@ -30,7 +30,7 @@ public class CityServiceImpl implements CityService {
     }
 
     @Transactional
-    public void deleteCity(Integer idCity) {
+    public void delete(Integer idCity) {
         cityDAO.delete(findById(idCity));
     }
 

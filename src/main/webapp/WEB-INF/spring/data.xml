@@ -37,6 +37,7 @@
                 <value>main.springmvc.model.City</value>
                 <value>main.springmvc.model.Country</value>
                 <value>main.springmvc.model.Hotel</value>
+                <!--<value>main.springmvc.model.Room</value>-->
             </list>
         </property>
         <property name="hibernateProperties">

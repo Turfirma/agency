@@ -1,11 +1,10 @@
 package main.springmvc.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import lombok.*;
 import javax.persistence.*;
 import java.util.Collection;
 

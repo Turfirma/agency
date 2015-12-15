@@ -13,7 +13,6 @@ import java.util.Collection;
 
 @Getter
 @Setter
-
 @EqualsAndHashCode(exclude="cityId")
 @Entity
 @Table(name = "city")
@@ -31,5 +30,6 @@ public class City {
     private Country country;
 
     @OneToMany(mappedBy = "city", fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private Collection<Hotel> hotels;
 }

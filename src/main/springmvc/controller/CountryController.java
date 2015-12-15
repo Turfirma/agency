@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * Project name: agency
@@ -26,7 +22,7 @@ public class CountryController {
     private CountryService countryService;
 
     @RequestMapping(value = "/countries", method = RequestMethod.GET)
-    public String listCountries(Model model) {
+     public String listCountries(Model model) {
         model.addAttribute("country", new Country());
         model.addAttribute("listCountries", countryService.findAll());
         return "country";
@@ -40,7 +36,7 @@ public class CountryController {
 
     @RequestMapping("/remove/{countryId}")
     public String removePerson(@PathVariable("countryId") int countryId){
-        countryService.deleteCountry(countryId);
+        countryService.delete(countryId);
         return "redirect:/countries";
     }
 

@@ -6,7 +6,6 @@
 <head>
   <title>Country Page</title>
   <link rel="stylesheet" href="/resources/css/table.css" type="text/css"> </link>
-
 </head>
 <body>
 <h1 id = "titlecountry">

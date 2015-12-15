@@ -22,8 +22,8 @@ public class GenericDAOImpl<T> implements GenericDAO <T> {
     private SessionFactory sessionFactory;
 
     @Override
-    public void saveOrUpdate(Object o) {
-        sessionFactory.getCurrentSession().saveOrUpdate(o);
+    public void saveOrUpdate(T t) {
+        sessionFactory.getCurrentSession().saveOrUpdate(t);
     }
 
     @Override

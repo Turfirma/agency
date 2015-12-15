@@ -30,7 +30,7 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Transactional
-    public void deleteCountry(Integer countryId) {
+    public void delete(Integer countryId) {
         countryDAO.delete(findById(countryId));
     }
 
