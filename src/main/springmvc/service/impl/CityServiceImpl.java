@@ -1,7 +1,8 @@
-package main.springmvc.service;
+package main.springmvc.service.impl;
 
-import main.springmvc.dao.CityDAOImpl;
+import main.springmvc.dao.impl.CityDAOImpl;
 import main.springmvc.model.City;
+import main.springmvc.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,9 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Project name: agency
- * Created by bo4ek
- * Date: 12.12.2015
+ * Implementations of city services.
  */
 @Service
 public class CityServiceImpl implements CityService {

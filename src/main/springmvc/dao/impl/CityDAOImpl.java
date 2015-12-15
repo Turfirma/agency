@@ -1,12 +1,11 @@
-package main.springmvc.dao;
+package main.springmvc.dao.impl;
 
+import main.springmvc.dao.CityDAO;
 import main.springmvc.model.City;
 import org.springframework.stereotype.Repository;
 
 /**
- * Project name: agency
- * Created by bo4ek
- * Date: 12.12.2015
+ * Implementations of city DAO.
  */
 @Repository
 public class CityDAOImpl extends GenericDAOImpl<City> implements CityDAO {

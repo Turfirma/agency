@@ -1,12 +1,11 @@
-package main.springmvc.dao;
+package main.springmvc.dao.impl;
 
+import main.springmvc.dao.CountryDAO;
 import main.springmvc.model.Country;
 import org.springframework.stereotype.Repository;
 
 /**
- * Project name: agency
- * Created by bo4ek
- * Date: 12.12.2015
+ *Implementations of country DAO.
  */
 @Repository
 public class CountryDAOImpl extends GenericDAOImpl<Country> implements CountryDAO {

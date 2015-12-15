@@ -1,5 +1,6 @@
-package main.springmvc.dao;
+package main.springmvc.dao.impl;
 
+import main.springmvc.dao.GenericDAO;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -9,7 +10,7 @@ import java.util.List;
 /**
  * General DAO implementation.
  */
-public class GenericDAOImpl<T> implements GenericDAO <T> {
+public class GenericDAOImpl<T> implements GenericDAO<T> {
 
     private Class<T> type;
 

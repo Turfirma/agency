@@ -28,7 +28,4 @@ public class Hotel {
     @JoinColumn(name = "id_city", nullable = false)
     private City city;
 
-/*    @OneToMany(mappedBy = "hotels", fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
-    private Collection<Room> rooms;*/
 }

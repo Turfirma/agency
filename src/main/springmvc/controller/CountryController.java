@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Project name: agency
- * Created by bo4ek
- * Date: 13.12.2015
+ * Controller for operations with countries.
  */
 @Controller
 public class CountryController {

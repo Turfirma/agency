@@ -1,10 +1,10 @@
 package main.springmvc.controller;
 
-import main.springmvc.service.CityServiceImpl;
+import main.springmvc.service.impl.CityServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * Created by Максим on 14.12.2015.
+ * Controller for operations with hotels.
  */
 public class HotelController {
 

@@ -1,7 +1,8 @@
-package main.springmvc.service;
+package main.springmvc.service.impl;
 
-import main.springmvc.dao.CountryDAOImpl;
+import main.springmvc.dao.impl.CountryDAOImpl;
 import main.springmvc.model.Country;
+import main.springmvc.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,9 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Project name: agency
- * Created by bo4ek
- * Date: 12.12.2015
+ * Implementations of country services.
  */
 @Service
 public class CountryServiceImpl implements CountryService {
