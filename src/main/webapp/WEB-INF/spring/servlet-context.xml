@@ -12,7 +12,6 @@
 
     <import resource="controllers.xml"/>
 
-    <mvc:resources location="/main/resources/" mapping="/resources/**"/>
 
     <mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"/>
 
