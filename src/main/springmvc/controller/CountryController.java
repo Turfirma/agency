@@ -50,42 +50,4 @@ public class CountryController {
         model.addAttribute("listCountries", countryService.findAll());
         return "country";
     }
-
-    /*@RequestMapping("/")
-    public ModelAndView handleRequest() throws Exception {
-        List<Country> listCountries = countryService.findAll();
-        ModelAndView model = new ModelAndView("CountryList");
-        model.addObject("countryList", listCountries);
-        return model;
-    }
-
-    @RequestMapping(value = "/new", method = RequestMethod.GET)
-    public ModelAndView newCountry() {
-        ModelAndView model = new ModelAndView("CountryForm");
-        model.addObject("country", new Country());
-        return model;
-    }
-
-    @RequestMapping(value = "/edit", method = RequestMethod.GET)
-    public ModelAndView editCountry(HttpServletRequest request) {
-        Integer countryId = Integer.parseInt(request.getParameter("countryId"));
-        Country country = countryService.findById(countryId);
-        ModelAndView model = new ModelAndView("CountryForm");
-        model.addObject("country", country);
-        return model;
-    }
-
-    @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public ModelAndView deleteCountry(HttpServletRequest request) {
-        Integer countryId = Integer.parseInt(request.getParameter("countryId"));
-        countryService.deleteCountry(countryId);
-        return new ModelAndView("redirect:/");
-    }
-
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView saveCountry(@ModelAttribute Country country) {
-        countryService.saveOrUpdate(country);
-        return new ModelAndView("redirect:/");
-    }*/
-
 }

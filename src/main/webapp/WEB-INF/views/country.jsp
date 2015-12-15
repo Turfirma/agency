@@ -20,17 +20,10 @@
       <c:if test="${!empty country.countryName}">
       <tr>
         <td>
-          <form:label path="countryId">
-            <spring:message text="ID"/>
-          </form:label>
-        </td>
-        <td>
-          <form:input path="countryId" readonly="true" size="8"  disabled="true" />
           <form:hidden path="countryId"/>
         </td>
       </tr>
-
-    </c:if>
+      </c:if>
       <tr>
         <td>
             <form:label path="countryName">
@@ -46,7 +39,7 @@
       <td class="tg-4eph" colspan="2">
         <c:if test="${!empty country.countryName}">
           <input type="submit"
-                 value="<spring:message text="Edit Country"/>" />
+                 value="<spring:message text="Save"/>" />
         </c:if>
         <c:if test="${empty country.countryName}">
           <input type="submit"
