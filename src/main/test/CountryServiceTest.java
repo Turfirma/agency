@@ -2,6 +2,7 @@ package main.test;
 
 import main.springmvc.dao.CountryDAO;
 import main.springmvc.model.Country;
+import main.springmvc.service.CountryService;
 import main.springmvc.service.impl.CountryServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;

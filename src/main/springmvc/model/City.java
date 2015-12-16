@@ -27,8 +27,4 @@ public class City {
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST, CascadeType.REFRESH})
     private Country country;
-
-    @OneToMany(mappedBy = "city", fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
-    private Collection<Hotel> hotels;
 }

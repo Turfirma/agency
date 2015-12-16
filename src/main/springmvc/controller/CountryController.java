@@ -27,10 +27,7 @@ public class CountryController {
 
     @RequestMapping(value = "/country/add", method = RequestMethod.POST)
     public String addCountry(@ModelAttribute Country country) {
-        List<Country> list = countryService.findAll();
-        for (Country countryList : list){
-            if (countryList.equals(country)) countryService.saveOrUpdate(country);
-        }
+        countryService.saveOrUpdate(country);
         return "redirect:/countries";
     }
 
@@ -42,7 +39,7 @@ public class CountryController {
         return "redirect:/countries";
     }
 
-    @RequestMapping("/edit/{countryId}")
+    @RequestMapping("/country/edit/{countryId}")
     public String editCountry(@PathVariable("countryId") int countryId, Model model){
         model.addAttribute("country", countryService.findById(countryId));
         model.addAttribute("listCountries", countryService.findAll());
