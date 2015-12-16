@@ -25,7 +25,7 @@ public class Country {
     @Column(name = "country_name",unique = true, nullable = false)
     private String countryName;
 
-    @OneToMany(mappedBy = "country", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "country", fetch = FetchType.EAGER , cascade = CascadeType.ALL)
     @Fetch(value = FetchMode.SUBSELECT)
     private Collection<City> city;
 }
