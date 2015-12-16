@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Controller for operations with countries.
  */
@@ -25,7 +27,10 @@ public class CountryController {
 
     @RequestMapping(value = "/country/add", method = RequestMethod.POST)
     public String addCountry(@ModelAttribute Country country) {
-        countryService.saveOrUpdate(country);
+        List<Country> list = countryService.findAll();
+        for (Country countryList : list){
+            if (countryList.equals(country)) countryService.saveOrUpdate(country);
+        }
         return "redirect:/countries";
     }
 
