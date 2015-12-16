@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Created by Максим on 16.12.2015.
+ * General services for all services in application.
  */
 public class GenericServiceImpl<T> implements GenericService <T> {
 
