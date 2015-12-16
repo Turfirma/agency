@@ -5,7 +5,6 @@ import main.springmvc.model.Country;
 import main.springmvc.service.CountryService;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.*;
 import org.springframework.ui.ExtendedModelMap;
