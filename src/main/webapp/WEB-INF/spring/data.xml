@@ -50,4 +50,6 @@
         </property>
     </bean>
 
+    <bean id="CountryDAOImpl" class="main.springmvc.dao.impl.CountryDAOImpl"></bean>
+
 </beans>
