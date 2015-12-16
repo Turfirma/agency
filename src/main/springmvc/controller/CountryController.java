@@ -30,7 +30,7 @@ public class CountryController {
     }
 
     @RequestMapping(value = "/country/remove", method = RequestMethod.POST)
-    public String removePerson(@RequestParam(value = "idList") Integer[] list){
+    public String removeCountry(@RequestParam(value = "idList") Integer[] list){
         for (Integer id: list) {
             countryService.delete(id);
         }
@@ -38,7 +38,7 @@ public class CountryController {
     }
 
     @RequestMapping("/edit/{countryId}")
-    public String editPerson(@PathVariable("countryId") int countryId, Model model){
+    public String editCountry(@PathVariable("countryId") int countryId, Model model){
         model.addAttribute("country", countryService.findById(countryId));
         model.addAttribute("listCountries", countryService.findAll());
         return "country";

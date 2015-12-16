@@ -1,5 +1,6 @@
 package main.springmvc.model;
 
+import com.sun.istack.internal.NotNull;
 import lombok.*;
 import javax.persistence.*;
 import java.util.Collection;
@@ -19,8 +20,9 @@ public class Country {
     private Integer countryId;
 
     @Column(name = "country_name",unique = true, nullable = false)
+    @NotNull
     private String countryName;
 
-    @OneToMany(mappedBy = "country", fetch = FetchType.LAZY , cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "country", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<City> city;
 }
