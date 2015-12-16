@@ -43,6 +43,4 @@ public class CountryController {
         model.addAttribute("listCountries", countryService.findAll());
         return "country";
     }
-
-
 }

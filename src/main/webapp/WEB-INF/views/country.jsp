@@ -47,6 +47,8 @@
   </table>
 </form:form>
 <br>
+
+<form:form action="${removeAction}" method="post">
 <h3>List of the countries</h3>
 <c:if test="${!empty listCountries}">
   <table class="tg" id ="table1">
@@ -59,7 +61,7 @@
     <c:forEach items="${listCountries}" var="country">
       <tr>
         <td><label>
-            <input type="checkbox" value="${country.countryId}" name="idList"/>
+        <input type="checkbox" value="${country.countryId}" name="idList"/>
         </label></td>
         <td>${country.countryId}</td>
         <td>${country.countryName}</td>
@@ -68,9 +70,10 @@
     </c:forEach>
   </table>
 </c:if>
-<form action="${removeAction}">
+
     <td class="tg-4eph" colspan="2">
     <input type="submit" value="<spring:message text="Delete"/>" />
-</form>
+
+</form:form>
 </body>
 </html>
