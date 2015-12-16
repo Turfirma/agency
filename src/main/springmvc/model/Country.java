@@ -1,9 +1,5 @@
 package main.springmvc.model;
 
-
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
 import lombok.*;
 import javax.persistence.*;
 import java.util.Collection;
@@ -25,7 +21,6 @@ public class Country {
     @Column(name = "country_name",unique = true, nullable = false)
     private String countryName;
 
-    @OneToMany(mappedBy = "country", fetch = FetchType.EAGER , cascade = CascadeType.ALL)
-    @Fetch(value = FetchMode.SUBSELECT)
+    @OneToMany(mappedBy = "country", fetch = FetchType.LAZY , cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<City> city;
 }

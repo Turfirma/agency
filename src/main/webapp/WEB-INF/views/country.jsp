@@ -5,7 +5,7 @@
 <html>
 <head>
   <title>Country Page</title>
-  <link rel="stylesheet" href="/resources/css/table.css" type="text/css"> </link>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/table.css" type="text/css"> </link>
 </head>
 <body>
 <h1 id = "titlecountry">
@@ -13,6 +13,7 @@
 </h1>
 
 <c:url var="addAction" value="/country/add" ></c:url>
+<c:url var="removeAction" value="/country/remove" ></c:url>
 
 <form:form action="${addAction}" commandName="country">
   <table>
@@ -33,16 +34,13 @@
             <form:input path="countryName" />
         </td>
     </tr>
-
-    <tr>
+      <tr>
       <td class="tg-4eph" colspan="2">
         <c:if test="${!empty country.countryName}">
-          <input type="submit"
-                 value="<spring:message text="Save"/>" />
+          <input type="submit" value="<spring:message text="Save"/>" />
         </c:if>
         <c:if test="${empty country.countryName}">
-          <input type="submit"
-                 value="<spring:message text="Add Country"/>" />
+          <input type="submit" value="<spring:message text="Add Country"/>" />
         </c:if>
       </td>
     </tr>
@@ -51,23 +49,28 @@
 <br>
 <h3>List of the countries</h3>
 <c:if test="${!empty listCountries}">
-
   <table class="tg" id ="table1">
     <tr>
-      <th width="80">Country ID</th>
-      <th width="120">Name of the country</th>
-      <th width="60">Edit</th>
-      <th width="60">Delete</th>
+        <th width="80">Check</th>
+        <th width="80">ID</th>
+        <th width="120">Name</th>
+        <th width="60">Edit</th>
     </tr>
     <c:forEach items="${listCountries}" var="country">
       <tr>
+        <td><label>
+            <input type="checkbox" value="${country.countryId}" name="idList"/>
+        </label></td>
         <td>${country.countryId}</td>
         <td>${country.countryName}</td>
-        <td><a href="<c:url value='/edit/${country.countryId}' />" >Edit</a></td>
-        <td><a href="<c:url value='/remove/${country.countryId}' />" >Delete</a></td>
+        <td><a href="<c:url value='/edit/${country.countryId}'/>" >Edit</a></td>
       </tr>
     </c:forEach>
   </table>
 </c:if>
+<form action="${removeAction}">
+    <td class="tg-4eph" colspan="2">
+    <input type="submit" value="<spring:message text="Delete"/>" />
+</form>
 </body>
 </html>

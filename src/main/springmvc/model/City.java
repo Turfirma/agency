@@ -25,8 +25,7 @@ public class City {
     @Column(name = "city_name", nullable = false)
     private String cityName;
 
-    @ManyToOne
-    @JoinColumn(name = "id_country", nullable = false)
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST, CascadeType.REFRESH})
     private Country country;
 
     @OneToMany(mappedBy = "city", fetch = FetchType.EAGER)

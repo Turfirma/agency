@@ -5,10 +5,7 @@ import main.springmvc.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Controller for operations with countries.
@@ -26,15 +23,17 @@ public class CountryController {
         return "country";
     }
 
-    @RequestMapping(value= "/country/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/country/add", method = RequestMethod.POST)
     public String addCountry(@ModelAttribute Country country) {
         countryService.saveOrUpdate(country);
         return "redirect:/countries";
     }
 
-    @RequestMapping("/remove/{countryId}")
-    public String removePerson(@PathVariable("countryId") int countryId){
-        countryService.delete(countryId);
+    @RequestMapping(value = "/country/remove", method = RequestMethod.POST)
+    public String removePerson(@RequestParam(value = "idList") Integer[] list){
+        for (Integer id: list) {
+            countryService.delete(id);
+        }
         return "redirect:/countries";
     }
 
@@ -44,4 +43,6 @@ public class CountryController {
         model.addAttribute("listCountries", countryService.findAll());
         return "country";
     }
+
+
 }
