@@ -83,7 +83,7 @@
             </div>
 
         </form:form>
-        <div align="center"><a href="<c:url value="/index.jsp" /> ">Homepage</a></div>
+        <div align="center"><a class="btn btn-default btn-large btn-block btn-primary" href="<c:url value="/index.jsp" /> ">Homepage</a></div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="../resources/bootstrap/js/bootstrap.js"></script>
