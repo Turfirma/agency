@@ -26,15 +26,14 @@ public class CityController {
     @RequestMapping(value = "/cities", method = RequestMethod.GET)
     public String listCities(Model model) {
         model.addAttribute("city", new City());
+        model.addAttribute("country", new Country());
         model.addAttribute("listCities", cityService.findAll());
         model.addAttribute("listCountries", countryService.findAll());
         return "city";
     }
 
     @RequestMapping(value = "/city/add", method = RequestMethod.POST)
-    public String addCity(@RequestParam String cityName, @RequestParam Country country) {
-        City city = new City();
-        city.setCityName(cityName);
+    public String addCity(@ModelAttribute City city, @ModelAttribute Country country) {
         city.setCountry(country);
         cityService.saveOrUpdate(city);
         return "redirect:/cities";
