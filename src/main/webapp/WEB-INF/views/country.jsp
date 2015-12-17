@@ -78,7 +78,8 @@
             </c:if>
 
             <div align="center" id="delete">
-                <input class="btn btn-danger btn-large btn-block btn-primary" type="submit" value="<spring:message text="Delete"/>" />
+                <input class="btn btn-danger btn-large btn-block btn-primary" type="submit" value="<spring:message text="Delete"/>"
+                       onclick="if (confirm('Are you sure?')) form.action=${removeAction}; else return false;"/>
             </div>
 
         </form:form>
