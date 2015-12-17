@@ -39,7 +39,7 @@ public class CountryController {
         return "redirect:/countries";
     }
 
-    @RequestMapping("/country/edit/{countryId}")
+    @RequestMapping("/edit/{countryId}")
     public String editCountry(@PathVariable("countryId") int countryId, Model model){
         model.addAttribute("country", countryService.findById(countryId));
         model.addAttribute("listCountries", countryService.findAll());
