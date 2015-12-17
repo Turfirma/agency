@@ -27,7 +27,6 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
     @Override
     public void saveOrUpdate(T t) {
         sessionFactory.getCurrentSession().saveOrUpdate(t);
-        log.error("Update");
     }
 
     @Override
