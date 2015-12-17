@@ -70,7 +70,7 @@
                             <td>${country.countryId}</td>
                             <td>${country.countryName}</td>
                             <td>
-                                <div class="btn btn-info" ><a href="<c:url value='/edit/${country.countryId}'/>" >Edit</a></div>
+                                <div class="btn btn-info" ><a href="<c:url value='/country/edit/${country.countryId}'/>" >Edit</a></div>
                             </td>
                         </tr>
                     </c:forEach>
