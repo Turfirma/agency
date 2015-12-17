@@ -1,44 +1,42 @@
 
-#table1.tg {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border-color: #ccc;
+#titlecountry {
+    display: inline-block;
+    color: #7e7e7e;
+    font: normal 25px/20px 'Oswald', sans-serif;
+    /*background: url(../images/bg.png);*/
+    margin: 10px 50px;
+    padding: 0 15px;
+    text-transform: uppercase;
 }
 
-#table1.tg td {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    padding: 10px 5px;
-    border-style: solid;
-    border-width: 1px;
-    overflow: hidden;
-    word-break: normal;
-    border-color: #ccc;
-    color: #333;
-    background-color: #fff;
+#ListCountry {
+    display: inline-block;
+    color: #7e7e7e;
+    font: normal 25px/20px 'Oswald', sans-serif;
+    /*background: url(../images/bg.png);*/
+    margin: 10px 40px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+#table1 tr {
+    text-align: center;
+    list-style-type: none;
+    list-style-position: inside;
+    padding: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
-#table1.tg th {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    padding: 10px 5px;
-    border-style: solid;
-    border-width: 1px;
-    overflow: hidden;
-    word-break: normal;
-    border-color: #ccc;
-    color: #333;
-    background-color: #f0f0f0;
-}
-#table1.tg-4eph {
-    background-color: #f9f9f9
+#table1 th {
+    text-align: center;
 }
 
-#titlecountry{
-    font-family: Times;
-    font-style: italic;
-    color: dimgray;
-    font-weight: 600;
-    height: auto;
+td a {
+     color:#ffffff;
+     text-decoration: none;
+ }
+
+td a:hover {
+    color:#ffffff;
+    text-decoration: none;
 }

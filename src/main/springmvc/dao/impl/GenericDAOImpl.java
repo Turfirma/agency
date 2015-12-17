@@ -1,5 +1,6 @@
 package main.springmvc.dao.impl;
 
+import lombok.extern.log4j.Log4j;
 import main.springmvc.dao.GenericDAO;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * General DAO implementation.
  */
+@Log4j
 public class GenericDAOImpl<T> implements GenericDAO<T> {
 
     private Class<T> type;
@@ -25,6 +27,7 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
     @Override
     public void saveOrUpdate(T t) {
         sessionFactory.getCurrentSession().saveOrUpdate(t);
+        log.error("Update");
     }
 
     @Override
