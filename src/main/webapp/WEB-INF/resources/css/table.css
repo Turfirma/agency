@@ -40,3 +40,14 @@ td a:hover {
     color:#ffffff;
     text-decoration: none;
 }
+
+h1 {
+    display: inline-block;
+    color: #7e7e7e;
+    font: normal 25px/20px 'Oswald', sans-serif;
+    /*background: url(../images/bg.png);*/
+    margin: 10px 150px;
+    padding: 0 15px;
+    text-transform: uppercase;
+    text-align: center;
+}
